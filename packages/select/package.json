@@ -1,5 +1,5 @@
 {
-  "name": "@Propshop/inquirer-select",
+  "name": "@propshop/inquirer-select",
   "version": "0.0.18",
   "description": "Inquirer select/list prompt",
   "main": "index.js",
@@ -13,7 +13,7 @@
   "author": "Simon Boudrias",
   "license": "MIT",
   "dependencies": {
-    "@inquirer/core": "^0.0.18-alpha.0",
+    "@propshop/inquirer-core": "^0.0.18",
     "chalk": "^4.1.1",
     "figures": "^3.0.0"
   },

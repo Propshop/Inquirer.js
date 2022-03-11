@@ -1,5 +1,5 @@
 {
-  "name": "@Propshop/inquirer-confirm",
+  "name": "@propshop/inquirer-confirm",
   "version": "0.0.17",
   "description": "Inquirer confirm prompt",
   "keywords": [
@@ -17,8 +17,8 @@
   "main": "index.js",
   "repository": "SBoudrias/Inquirer.js",
   "dependencies": {
-    "@inquirer/core": "^0.0.18-alpha.0",
-    "@inquirer/input": "^0.0.18-alpha.0",
+    "@propshop/inquirer-core": "^0.0.18",
+    "@propshop/inquirer-input": "^0.0.18",
     "chalk": "^4.1.1"
   },
   "publishConfig": {

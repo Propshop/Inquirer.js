@@ -1,5 +1,5 @@
 {
-  "name": "@Propshop/inquirer-editor",
+  "name": "@propshop/inquirer-editor",
   "version": "0.0.11",
   "description": "Inquirer multiline editor prompt",
   "main": "index.js",
@@ -13,7 +13,7 @@
   "author": "Simon Boudrias <admin@simonboudrias.com>",
   "license": "MIT",
   "dependencies": {
-    "@inquirer/core": "^0.0.18-alpha.0",
+    "@propshop/inquirer-core": "^0.0.18",
     "chalk": "^4.1.1",
     "external-editor": "^3.0.3"
   },

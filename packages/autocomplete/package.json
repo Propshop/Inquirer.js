@@ -1,5 +1,5 @@
 {
-  "name": "@Propshop/inquirer-autocomplete",
+  "name": "@propshop/inquirer-autocomplete",
   "version": "2.0.1",
   "main": "index.js",
   "author": "Martin Hansen <martin@martinhansen.no>",

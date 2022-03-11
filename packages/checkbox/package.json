@@ -1,5 +1,5 @@
 {
-  "name": "@Propshop/inquirer-checkbox",
+  "name": "@propshop/inquirer-checkbox",
   "version": "0.0.18",
   "description": "Inquirer checkbox prompt",
   "main": "index.js",
@@ -13,7 +13,7 @@
   "author": "Simon Boudrias",
   "license": "MIT",
   "dependencies": {
-    "@inquirer/core": "^0.0.18-alpha.0",
+    "@propshop/inquirer-core": "^0.0.18-alpha.0",
     "chalk": "^4.1.1",
     "figures": "^3.0.0"
   },
