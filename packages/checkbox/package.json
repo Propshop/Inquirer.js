@@ -1,9 +1,8 @@
 {
-  "name": "@inquirer/checkbox",
+  "name": "@Propshop/inquirer-checkbox",
   "version": "0.0.18-alpha.0",
   "description": "Inquirer checkbox prompt",
   "main": "index.js",
-  "repository": "SBoudrias/Inquirer.js",
   "keywords": [
     "cli",
     "prompt",

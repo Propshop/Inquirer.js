@@ -1,5 +1,5 @@
 {
-  "name": "@inquirer/editor",
+  "name": "@Propshop/inquirer-editor",
   "version": "0.0.11-alpha.0",
   "description": "Inquirer multiline editor prompt",
   "main": "index.js",

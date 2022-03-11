@@ -34,7 +34,7 @@
     "prepublishOnly": "cp ../../README.md .",
     "postpublish": "rm -f README.md"
   },
-  "repository": "Propshop/Inquirer.js",
+  "repository": "@Propshop/Inquirer.js",
   "license": "MIT",
   "dependencies": {
     "ansi-escapes": "^4.2.1",

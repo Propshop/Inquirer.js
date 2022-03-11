@@ -1,5 +1,5 @@
 {
-  "name": "@inquirer/select",
+  "name": "@Propshop/inquirer-select",
   "version": "0.0.18-alpha.0",
   "description": "Inquirer select/list prompt",
   "main": "index.js",

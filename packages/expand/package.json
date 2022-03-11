@@ -1,5 +1,5 @@
 {
-  "name": "@inquirer/expand",
+  "name": "@Propshop/inquirer-expand",
   "version": "0.0.18-alpha.0",
   "description": "Inquirer checkbox prompt",
   "main": "index.js",

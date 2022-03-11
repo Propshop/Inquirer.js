@@ -1,5 +1,5 @@
 {
-  "name": "@inquirer/core",
+  "name": "@Propshop/inquirer-core",
   "version": "0.0.18-alpha.0",
   "description": "Core Inquirer prompt API",
   "main": "index.js",
