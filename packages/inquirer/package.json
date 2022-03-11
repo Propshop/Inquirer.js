@@ -1,8 +1,8 @@
 {
-  "name": "inquirer",
+  "name": "@Propshop/inquirer",
   "version": "8.2.1",
-  "description": "A collection of common interactive command line user interfaces.",
-  "author": "Simon Boudrias <admin@simonboudrias.com>",
+  "description": "Fork of Inquirer. A collection of common interactive command line user interfaces.",
+  "author": "Simon Boudrias <admin@simonboudrias.com> and Gary Basin <gary@propshop.io>",
   "files": [
     "lib",
     "README.md"
@@ -34,7 +34,7 @@
     "prepublishOnly": "cp ../../README.md .",
     "postpublish": "rm -f README.md"
   },
-  "repository": "SBoudrias/Inquirer.js",
+  "repository": "Propshop/Inquirer.js",
   "license": "MIT",
   "dependencies": {
     "ansi-escapes": "^4.2.1",
