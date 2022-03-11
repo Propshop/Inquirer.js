@@ -1,6 +1,6 @@
 {
   "name": "@Propshop/inquirer-password",
-  "version": "0.0.17-alpha.0",
+  "version": "0.0.17",
   "description": "Inquirer password prompt",
   "keywords": [
     "cli",
