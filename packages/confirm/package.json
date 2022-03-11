@@ -1,6 +1,6 @@
 {
   "name": "@propshop/inquirer-confirm",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Inquirer confirm prompt",
   "keywords": [
     "cli",
@@ -18,7 +18,7 @@
   "repository": "SBoudrias/Inquirer.js",
   "dependencies": {
     "@propshop/inquirer-core": "^0.0.18",
-    "@propshop/inquirer-input": "^0.0.18",
+    "@propshop/inquirer-input": "^0.0.19",
     "chalk": "^4.1.1"
   },
   "publishConfig": {

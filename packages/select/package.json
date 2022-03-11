@@ -1,6 +1,6 @@
 {
   "name": "@propshop/inquirer-select",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Inquirer select/list prompt",
   "main": "index.js",
   "repository": "SBoudrias/Inquirer.js",

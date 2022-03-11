@@ -1,6 +1,6 @@
 {
   "name": "@propshop/inquirer-editor",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Inquirer multiline editor prompt",
   "main": "index.js",
   "repository": "SBoudrias/Inquirer.js",

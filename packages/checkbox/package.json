@@ -1,6 +1,6 @@
 {
   "name": "@propshop/inquirer-checkbox",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Inquirer checkbox prompt",
   "main": "index.js",
   "keywords": [
