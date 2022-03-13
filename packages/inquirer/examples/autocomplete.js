@@ -4,11 +4,9 @@
 
 'use strict';
 
-const inquirer = require('inquirer');
+const inquirer = require('..');
 const fuzzy = require('fuzzy');
 const inquirerPrompt = require('../lib/prompts/autocomplete.js');
-
-inquirer.registerPrompt('autocomplete', inquirerPrompt);
 
 const states = [
   'Alabama',
@@ -93,6 +91,27 @@ function searchFood(answers, input = '') {
     }, Math.random() * 470 + 30);
   });
 }
+
+//   inquirer
+//     .prompt([
+//       {
+//         type: 'confirm',
+//         name: 'bacon',
+//         message: 'Do you like bacon?',
+//       },
+//     ])
+//     .then((answers) => {
+//       console.log(JSON.stringify(answers));
+//     })
+//     .catch((error) => {
+//       if (error.isTtyError) {
+//         // Prompt couldn't be rendered in the current environment
+//       } else {
+//         // Something else went wrong
+//       }
+//     });
+
+inquirer.registerPrompt('autocomplete', inquirerPrompt);
 
 inquirer
   .prompt([
