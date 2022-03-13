@@ -6,7 +6,7 @@
 
 const inquirer = require('inquirer');
 const fuzzy = require('fuzzy');
-const inquirerPrompt = require('./index.js');
+const inquirerPrompt = require('../lib/prompts/autocomplete.js');
 
 inquirer.registerPrompt('autocomplete', inquirerPrompt);
 
