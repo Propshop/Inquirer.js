@@ -104,20 +104,21 @@ inquirer.registerPrompt('autocomplete', inquirerPrompt);
 
 inquirer
   .prompt([
-    // {
-    //   type: 'autocomplete',
-    //   name: 'fruit',
-    //   suggestOnly: true,
-    //   message: 'What is your favorite fruit?',
-    //   searchText: 'We are searching the internet for you!',
-    //   emptyText: 'Nothing found!',
-    //   default: 'Banana',
-    //   source: searchFood,
-    //   pageSize: 4,
-    //   validate(val) {
-    //     return val ? true : 'Type something!';
-    //   },
-    // },
+    {
+      type: 'autocomplete',
+      name: 'fruit',
+      suggestOnly: true,
+      message: 'What is your favorite fruit?',
+      searchText: 'We are searching the internet for you!',
+      emptyText: 'Nothing found!',
+      default: 'Banana',
+      source: searchFood,
+      hintText: 'Use arrows keys or type a response',
+      pageSize: 4,
+      validate(val) {
+        return val ? true : 'Type something!';
+      },
+    },
     {
       type: 'autocomplete',
       name: 'state',
