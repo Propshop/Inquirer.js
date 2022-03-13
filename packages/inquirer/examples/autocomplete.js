@@ -92,24 +92,6 @@ function searchFood(answers, input = '') {
   });
 }
 
-//   inquirer
-//     .prompt([
-//       {
-//         type: 'confirm',
-//         name: 'bacon',
-//         message: 'Do you like bacon?',
-//       },
-//     ])
-//     .then((answers) => {
-//       console.log(JSON.stringify(answers));
-//     })
-//     .catch((error) => {
-//       if (error.isTtyError) {
-//         // Prompt couldn't be rendered in the current environment
-//       } else {
-//         // Something else went wrong
-//       }
-//     });
 
 inquirer.registerPrompt('autocomplete', inquirerPrompt);
 
