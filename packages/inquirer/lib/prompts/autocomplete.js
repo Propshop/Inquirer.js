@@ -87,8 +87,11 @@ class AutocompletePrompt extends Base {
     let bottomContent = '';
 
     if (this.firstRender) {
+      const hintText = this.opt.hintText
+        ? this.opt.hintText
+        : 'Use arrow keys or type to search';
       const suggestText = this.opt.suggestOnly ? ', tab to autocomplete' : '';
-      content += pc.dim('(Use arrow keys or type to search' + suggestText + ')');
+      content += pc.dim('(' + hintText + suggestText + ')');
     }
 
     // Render choices or answer depending on the state
