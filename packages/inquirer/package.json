@@ -1,6 +1,6 @@
 {
   "name": "@propshop/inquirer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A collection of common interactive command line user interfaces.",
   "author": "Simon Boudrias <admin@simonboudrias.com> and Gary Basin <gary@propshop.io>",
   "files": [

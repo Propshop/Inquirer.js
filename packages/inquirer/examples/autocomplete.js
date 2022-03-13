@@ -84,6 +84,14 @@ function searchStates(answers, input = '') {
   });
 }
 
+function searchStates2(answers, input = '') {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(fuzzy.filter(input, states).map((el) => el.original));
+    }, Math.random() * 470 + 30);
+  });
+}
+
 function searchFood(answers, input = '') {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -92,25 +100,24 @@ function searchFood(answers, input = '') {
   });
 }
 
-
 inquirer.registerPrompt('autocomplete', inquirerPrompt);
 
 inquirer
   .prompt([
-    {
-      type: 'autocomplete',
-      name: 'fruit',
-      suggestOnly: true,
-      message: 'What is your favorite fruit?',
-      searchText: 'We are searching the internet for you!',
-      emptyText: 'Nothing found!',
-      default: 'Banana',
-      source: searchFood,
-      pageSize: 4,
-      validate(val) {
-        return val ? true : 'Type something!';
-      },
-    },
+    // {
+    //   type: 'autocomplete',
+    //   name: 'fruit',
+    //   suggestOnly: true,
+    //   message: 'What is your favorite fruit?',
+    //   searchText: 'We are searching the internet for you!',
+    //   emptyText: 'Nothing found!',
+    //   default: 'Banana',
+    //   source: searchFood,
+    //   pageSize: 4,
+    //   validate(val) {
+    //     return val ? true : 'Type something!';
+    //   },
+    // },
     {
       type: 'autocomplete',
       name: 'state',
@@ -131,7 +138,8 @@ inquirer
       type: 'autocomplete',
       name: 'stateNoPromise',
       message: 'Select a state to travel to',
-      source: () => states,
+      //source: () => states,
+      source: searchStates2,
     },
     {
       type: 'autocomplete',
