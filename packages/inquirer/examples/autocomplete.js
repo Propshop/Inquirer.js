@@ -4,11 +4,9 @@
 
 'use strict';
 
-const inquirer = require('inquirer');
+const inquirer = require('..');
 const fuzzy = require('fuzzy');
-const inquirerPrompt = require('./index.js');
-
-inquirer.registerPrompt('autocomplete', inquirerPrompt);
+const inquirerPrompt = require('../lib/prompts/autocomplete.js');
 
 const states = [
   'Alabama',
@@ -86,6 +84,14 @@ function searchStates(answers, input = '') {
   });
 }
 
+function searchStates2(answers, input = '') {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(fuzzy.filter(input, states).map((el) => el.original));
+    }, Math.random() * 470 + 30);
+  });
+}
+
 function searchFood(answers, input = '') {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -93,6 +99,8 @@ function searchFood(answers, input = '') {
     }, Math.random() * 470 + 30);
   });
 }
+
+inquirer.registerPrompt('autocomplete', inquirerPrompt);
 
 inquirer
   .prompt([
@@ -105,6 +113,7 @@ inquirer
       emptyText: 'Nothing found!',
       default: 'Banana',
       source: searchFood,
+      hintText: 'Use arrows keys or type a response',
       pageSize: 4,
       validate(val) {
         return val ? true : 'Type something!';
@@ -130,7 +139,8 @@ inquirer
       type: 'autocomplete',
       name: 'stateNoPromise',
       message: 'Select a state to travel to',
-      source: () => states,
+      //source: () => states,
+      source: searchStates2,
     },
     {
       type: 'autocomplete',

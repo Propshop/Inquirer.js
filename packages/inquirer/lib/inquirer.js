@@ -67,6 +67,7 @@ inquirer.createPromptModule = function (opt) {
     this.registerPrompt('checkbox', require('./prompts/checkbox'));
     this.registerPrompt('password', require('./prompts/password'));
     this.registerPrompt('editor', require('./prompts/editor'));
+    this.registerPrompt('autocomplete', require('./prompts/autocomplete'));
   };
 
   promptModule.restoreDefaultPrompts();

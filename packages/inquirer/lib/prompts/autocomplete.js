@@ -8,17 +8,16 @@
 
 const ansiEscapes = require('ansi-escapes');
 const figures = require('figures');
-const Base = require('inquirer/lib/prompts/base');
-const Choices = require('inquirer/lib/objects/choices');
-const observe = require('inquirer/lib/utils/events');
-const utils = require('inquirer/lib/utils/readline');
-const Paginator = require('inquirer/lib/utils/paginator');
+const Base = require('./base');
+const Choices = require('../objects/choices');
+const observe = require('../utils/events');
+const utils = require('../utils/readline');
+const Paginator = require('../utils/paginator');
 const pc = require('picocolors');
 const runAsync = require('run-async');
 const { takeWhile } = require('rxjs/operators');
 
-const isSelectable = (choice) =>
-  choice.type !== 'separator' && !choice.disabled;
+const isSelectable = (choice) => choice.type !== 'separator' && !choice.disabled;
 
 class AutocompletePrompt extends Base {
   constructor(
@@ -88,15 +87,17 @@ class AutocompletePrompt extends Base {
     let bottomContent = '';
 
     if (this.firstRender) {
-      const suggestText = this.opt.suggestOnly ? ', tab to autocomplete' : '';
-      content += pc.dim(
-        '(Use arrow keys or type to search' + suggestText + ')'
-      );
+      const hintText = this.opt.hintText
+        ? this.opt.hintText
+        : 'Use arrow keys or type to search' +
+          (this.opt.suggestOnly ? ', tab to autocomplete' : '');
+      content += pc.dim('(' + hintText + ')');
     }
 
     // Render choices or answer depending on the state
     if (this.status === 'answered') {
-      content += pc.cyan(this.shortAnswer || this.answerName || this.answer);
+      // content += pc.cyan(this.shortAnswer || this.answerName || this.answer);
+      content += this.shortAnswer || this.answerName || this.answer; // remove the cyan text color
     } else if (this.searching) {
       content += this.rl.line;
       bottomContent += '  ' + pc.dim(this.opt.searchText || 'Searching...');
@@ -147,9 +148,7 @@ class AutocompletePrompt extends Base {
     if (typeof this.opt.validate === 'function') {
       const checkValidationResult = (validationResult) => {
         if (validationResult !== true) {
-          this.render(
-            validationResult || 'Enter something, tab to autocomplete!'
-          );
+          this.render(validationResult || 'Enter something, tab to autocomplete!');
         } else {
           this.onSubmitAfterValidation(lineOrRl);
         }
@@ -249,8 +248,7 @@ class AutocompletePrompt extends Base {
       this.nbChoices = realChoices.length;
 
       const selectedIndex = realChoices.findIndex(
-        (choice) =>
-          choice === this.initialValue || choice.value === this.initialValue
+        (choice) => choice === this.initialValue || choice.value === this.initialValue
       );
 
       if (selectedIndex >= 0) {
@@ -278,9 +276,7 @@ class AutocompletePrompt extends Base {
     if (keyName === 'tab' && this.opt.suggestOnly) {
       if (this.currentChoices.getChoice(this.selected)) {
         this.rl.write(ansiEscapes.cursorLeft);
-        const autoCompleted = this.currentChoices.getChoice(
-          this.selected
-        ).value;
+        const autoCompleted = this.currentChoices.getChoice(this.selected).value;
         this.rl.write(ansiEscapes.cursorForward(autoCompleted.length));
         this.rl.line = autoCompleted;
         this.render();
@@ -326,9 +322,7 @@ function listRender(choices, pointer /*: string */) /*: string */ {
       separatorOffset++;
       output += '  - ' + choice.name;
       output +=
-        ' (' +
-        (typeof choice.disabled === 'string' ? choice.disabled : 'Disabled') +
-        ')';
+        ' (' + (typeof choice.disabled === 'string' ? choice.disabled : 'Disabled') + ')';
       output += '\n';
       return;
     }
