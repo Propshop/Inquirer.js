@@ -89,14 +89,15 @@ class AutocompletePrompt extends Base {
     if (this.firstRender) {
       const hintText = this.opt.hintText
         ? this.opt.hintText
-        : 'Use arrow keys or type to search';
-      const suggestText = this.opt.suggestOnly ? ', tab to autocomplete' : '';
-      content += pc.dim('(' + hintText + suggestText + ')');
+        : 'Use arrow keys or type to search' +
+          (this.opt.suggestOnly ? ', tab to autocomplete' : '');
+      content += pc.dim('(' + hintText + ')');
     }
 
     // Render choices or answer depending on the state
     if (this.status === 'answered') {
-      content += pc.cyan(this.shortAnswer || this.answerName || this.answer);
+      // content += pc.cyan(this.shortAnswer || this.answerName || this.answer);
+      content += this.shortAnswer || this.answerName || this.answer; // remove the cyan text color
     } else if (this.searching) {
       content += this.rl.line;
       bottomContent += '  ' + pc.dim(this.opt.searchText || 'Searching...');
